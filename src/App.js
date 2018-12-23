@@ -7,12 +7,19 @@ class App extends Component {
     persons: [
       { adj: 'spiteful', number: 1000000000000 },
       { adj: 'bitter', number: 12 },
-      { adj: 'lonely', number: 0 }
-    ]
+      { adj: 'lonely', number: 0 },
+    ],
+    otherstate: 'some other value'
   }
 
   boomHandler = () => {
-    console.log('Was clicked');
+    // console.log('Was clicked');
+    this.setState({
+      persons: [
+      { adj: 'hangry', number: 1000000000000 },
+      { adj: 'bitter', number: 12 },
+      { adj: 'lonely', number: 1 },
+      ] })
   }
 
   render() {
