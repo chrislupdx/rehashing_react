@@ -30,12 +30,23 @@ class App extends Component {
       { adj: 'lonely', number: 11111111 },
       ] })
   })
+
+
   render() {
+    const style = {
+      backgroundColor: 'green',
+      font: 'inherit',
+      border: '1x solid red',
+      padding: '8px',
+      cursor: 'pointer',
+    };
     return (
       <div className="App">
         <h1>am react app</h1>
         <p> i am fake web developer </p>
-        <button onClick={() => this.boomHandler('flooof')}> Push to Boom </button>
+        <button
+          style={style}
+          onClick={() => this.boomHandler('flooof')}> Push to Boom </button>
         < Person
           adj={this.state.persons[0].adj}
           number={this.state.persons[0].number} />
