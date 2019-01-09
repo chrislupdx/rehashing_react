@@ -46,6 +46,22 @@ togglePersonHandler = () => {
       padding: '8px',
       cursor: 'pointer',
     };
+
+    let persons = null;
+
+    if (this.state.showPersons){
+        persons = (
+        <div>
+          {this.state.persons.map(person => {
+            return <Person
+              name={person.adj}
+              age={person.number} />
+          })}
+        </div>
+
+      );
+    }
+
     return (
       <div className="App">
         <h1>am react app</h1>
@@ -53,22 +69,8 @@ togglePersonHandler = () => {
         <button
           style={style}
           onClick={this.togglePersonHandler}> Toggle Statements </button>
-        {
-          this.state.showPersons === true ?
-          <div>
-          < Person
-            adj={this.state.persons[0].adj}
-            number={this.state.persons[0].number} />
-          < Person
-            adj={this.state.persons[1].adj}
-            number={this.state.persons[1].number}
-            click={this.boomHandler.bind(this, 'wrinkly')}
-            changed={this.nameChangeHandler} >I enjoy potatoes </Person>
-          <Person
-            adj={this.state.persons[2].adj}
-            number={this.state.persons[2].number} />
-        </div> : null
-      }
+        {persons}
+
       </div>
     );
   // return React.createElement('div', null, React.createElement('h3', {className: 'App'}, 'fools rush on'));
